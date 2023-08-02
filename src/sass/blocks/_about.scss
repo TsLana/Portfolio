@@ -1,0 +1,123 @@
+.about-me{
+    padding-top: 120px;
+    &__wrapper{
+        display: grid;
+        grid-template-columns: 400px 670px;
+        grid-template-rows: minmax(245px, auto) minmax(255px, auto);
+        grid-auto-rows: minmax(245px, auto);
+        row-gap: 40px;
+        column-gap: 70px;
+
+        @media (max-width: 1200px){
+            grid-template-columns: 400px 500px;
+            column-gap: 40px;
+        }
+
+        @media (max-width: 992px){
+            grid-template-columns: 300px 380px;
+        }
+        
+        @media (max-width: 768px){
+            grid-template: 400px auto auto/ 1fr;
+        }
+
+        @media (max-width: 576px){
+            grid-template: 340px auto auto/ 1fr;
+        }
+    }
+    &__photo{
+        grid-row: 1/3;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px){
+            grid-row: unset;
+        }
+    }
+    &__title{
+        position: relative;
+        @include  before_circle;
+        padding: 1px 0 0 12px;
+    }
+    &__subtitle{
+        margin-top: 20px;
+        margin-bottom: 8px;
+    }
+    &__descr{
+        padding-top: 6px;
+        .divider{
+            margin: 0;
+        }
+    }
+    &__text{
+        color: $text_color;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    &__skills{
+        display: grid;
+        grid-template: minmax(115px, auto) / repeat(2, 260px);
+        grid-auto-rows: minmax(115px, auto);
+        justify-content: space-between;
+        row-gap: 20px;
+        &-item{
+            display: grid;
+            grid-template-columns: 40px 200px;
+            column-gap: 15px;
+
+            @media (max-width: 1200px){
+                grid-template-columns: 40px 195px;
+                column-gap: 15px;
+            }
+
+            @media (max-width: 992px){
+                grid-template-columns: 40px 320px;
+                column-gap: 20px;
+            }
+            @media (max-width: 768px){
+                grid-template-columns: 40px 195px;
+                column-gap: 15px;
+            }
+        }
+        &-circle{
+            position: relative;
+            padding: 15px 0 0 15px;
+            @include before_circle;
+            &::before{
+                top: 0;
+
+            }
+        }
+        &-text{
+            margin-top: 8px;
+            color: $text_color;
+            font-size: 12px;
+        }
+
+        @media (max-width: 1200px){
+            grid-template: minmax(115px, auto) / repeat(2, 240px);
+            column-gap: 20px;
+        }
+
+        @media (max-width: 992px){
+          grid-template-columns: 360px; 
+          grid-auto-rows: minmax(115px, auto); 
+        }
+
+        @media (max-width: 768px){
+            grid-template-columns: repeat(2, 260px);
+        }
+
+        @media (max-width: 576px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px){
+        padding-top: 40px;
+    }
+}
+
